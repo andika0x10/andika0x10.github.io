@@ -11,7 +11,7 @@ const LINKS = [
   {
     label: "GitHub",
     href: "https://github.com/andika0x01",
-    display: "andika0x01",
+    display: "andika0x10",
   },
   {
     label: "LinkedIn",
