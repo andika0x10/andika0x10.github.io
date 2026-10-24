@@ -9,9 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
  * Initializes Lenis smooth scrolling synchronized directly with GSAP ScrollTrigger ticker.
  * Also monitors scroll velocity to apply subtle kinetic physics to elements with `data-velocity-skew`.
  */
-export function useSmoothScroll() {
+export function useSmoothScroll(enabled = true) {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (!enabled || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
 
@@ -66,5 +66,5 @@ export function useSmoothScroll() {
       gsap.ticker.remove(velocityTicker);
       lenis.destroy();
     };
-  }, []);
+  }, [enabled]);
 }

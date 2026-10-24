@@ -53,12 +53,13 @@ function HoverWord({ children, muted = false }: { children: React.ReactNode; mut
   );
 }
 
-export function HeroSection() {
+export function HeroSection({ ready = true }: { ready?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const boardRef = useRef<HTMLDivElement>(null);
   const metaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!ready) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const ctx = gsap.context(() => {
@@ -117,7 +118,7 @@ export function HeroSection() {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [ready]);
 
   return (
     <section
