@@ -267,26 +267,19 @@ export function ConnectSection() {
           },
         }
       );
-
-      gsap.to(".footer-breath", {
-        letterSpacing: "-0.045em",
-        opacity: 0.82,
-        duration: 2.8,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section
+    <footer
+      id="connect"
+      aria-label="Contact"
       ref={sectionRef}
       style={{
         padding: "clamp(80px, 12vw, 160px) clamp(24px, 6vw, 120px)",
-        paddingBottom: "clamp(60px, 8vw, 120px)",
+        paddingBottom: "clamp(32px, 4vw, 56px)",
         maxWidth: "100%",
         overflowX: "hidden",
       }}
@@ -327,71 +320,35 @@ export function ConnectSection() {
         ))}
       </div>
 
-      {/* Footer mark */}
-      <div
-        ref={footerRef}
-        style={{
-          marginTop: "clamp(5rem, 10vw, 10rem)",
-          opacity: 0,
-        }}
-      >
-        <div aria-hidden="true" style={{ height: 1, background: "rgba(10,10,10,0.1)", marginBottom: "clamp(1.25rem, 3vw, 2.5rem)" }} />
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(0, 1fr) auto",
-            gap: "clamp(1.5rem, 5vw, 5rem)",
-            alignItems: "end",
-          }}
-          className="footer-grid"
-        >
-          <div>
-            <p
-              className="footer-breath"
-              style={{
-                margin: 0,
-                willChange: "letter-spacing, opacity",
-                fontSize: "clamp(40px, 10vw, 150px)",
-                fontWeight: 900,
-                letterSpacing: "-0.065em",
-                lineHeight: 0.88,
-                color: "var(--ink)",
-              }}
-            >
-              The archive is still breathing.
-            </p>
-            <p
-              style={{
-                margin: "clamp(0.9rem, 2vw, 1.4rem) 0 0",
-                fontSize: "clamp(15px, 1.5vw, 20px)",
-                lineHeight: 1.5,
-                color: "var(--muted)",
-                maxWidth: 560,
-              }}
-            >
-              Some systems are built. Some are studied until their seams begin to show.
-            </p>
+      <div ref={footerRef} className="portfolio-signoff" style={{ opacity: 0 }}>
+        <div className="portfolio-signoff__main">
+          <div className="portfolio-signoff__identity">
+            <svg className="portfolio-signoff__mark" viewBox="0 0 160 112" fill="none" aria-hidden="true" focusable="false">
+              <g stroke="currentColor" strokeWidth="10" strokeLinecap="square" strokeLinejoin="miter">
+                <path d="M12 96 46 16 80 96M29 64H80M80 96V16H104C160 16 160 96 104 96H80" />
+              </g>
+            </svg>
+            <div>
+              <p className="portfolio-signoff__name">Andika Dinata</p>
+              <p className="portfolio-signoff__roles">
+                Vulnerability Researcher
+                <br />
+                Software Engineer
+              </p>
+            </div>
           </div>
-
-          <div
-            style={{
-              fontFamily: "'Geist Mono', ui-monospace, monospace",
-              fontSize: "11px",
-              color: "var(--muted)",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              lineHeight: 1.8,
-              textAlign: "right",
-              whiteSpace: "nowrap",
-            }}
-          >
-            <div>andika0x01</div>
-            <div>portfolio / {new Date().getFullYear()}</div>
-            <div>Bandar Lampung</div>
-          </div>
+          <a className="portfolio-signoff__top" href="#top">
+            <span>Back to top</span>
+            <span className="portfolio-signoff__arrow" aria-hidden="true">
+              ↑
+            </span>
+          </a>
+        </div>
+        <div className="portfolio-signoff__details">
+          <p>© {new Intl.DateTimeFormat("en", { year: "numeric", timeZone: "Asia/Jakarta" }).format(new Date())} Andika Dinata</p>
+          <p>Bandar Lampung, Indonesia</p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

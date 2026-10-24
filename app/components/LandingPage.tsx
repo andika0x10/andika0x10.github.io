@@ -49,24 +49,24 @@ export function LandingPage({ projects }: LandingPageProps) {
   return (
     <>
       {!introComplete && <LoadingScreen exiting={introPhase === "exiting"} elapsedMs={loaderElapsedMs} />}
-      <main
-        inert={!introComplete}
-        aria-hidden={!introComplete || undefined}
-        style={{
-          background: "#ffffff",
-          minHeight: "100vh",
-          overflowX: "hidden",
-          position: "relative",
-        }}
-      >
-        <HeroSection ready={introComplete} />
-        <AboutSection />
-        <ExperienceSection />
-        <ActivitiesSection />
-        <SkillsSection />
-        <ProjectsSection projects={projects} />
+      <div inert={!introComplete} aria-hidden={!introComplete || undefined}>
+        <main
+          style={{
+            background: "#ffffff",
+            minHeight: "100vh",
+            overflowX: "hidden",
+            position: "relative",
+          }}
+        >
+          <HeroSection ready={introComplete} />
+          <AboutSection />
+          <ExperienceSection />
+          <ActivitiesSection />
+          <SkillsSection />
+          <ProjectsSection projects={projects} />
+        </main>
         <ConnectSection />
-      </main>
+      </div>
     </>
   );
 }

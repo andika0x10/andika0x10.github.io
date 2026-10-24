@@ -28,8 +28,6 @@ export const motionSystem = {
       backgroundColor: "rgba(232, 224, 255, 0.72)",
       stagger: { each: 0.016, from: "start" },
       duration: 0.12,
-      repeat: 1,
-      yoyo: true,
       ease: "sine.inOut",
     },
   },
@@ -79,14 +77,20 @@ export function revealTitle(target: gsap.TweenTarget) {
 }
 
 export function revealWordsWithTrail(words: gsap.TweenTarget, clips?: NodeListOf<HTMLElement> | HTMLElement[], scrollTrigger?: gsap.TweenVars["scrollTrigger"]) {
-  return gsap.fromTo(words, motionSystem.paragraph.from, {
+  const timeline = gsap.timeline({ scrollTrigger });
+  timeline.fromTo(words, motionSystem.paragraph.from, {
     ...motionSystem.paragraph.to,
-    scrollTrigger,
-    onStart: () => {
-      gsap.fromTo(words, motionSystem.trail.from, { ...motionSystem.trail.to, delay: 0.1 });
-    },
     onComplete: () => clips?.forEach((clip) => (clip.style.overflow = "visible")),
-  });
+  }, 0);
+  timeline.fromTo(words, motionSystem.trail.from, motionSystem.trail.to, 0.1);
+  // Both passes follow reading order; reversing the timeline reverses the stagger too.
+  timeline.to(words, {
+    ...motionSystem.trail.from,
+    stagger: { each: 0.016, from: "start" },
+    duration: 0.2,
+    ease: "sine.inOut",
+  }, ">0.08");
+  return timeline;
 }
 
 export function revealLink(target: gsap.TweenTarget) {

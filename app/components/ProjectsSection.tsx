@@ -171,6 +171,7 @@ export function ProjectsSection({ projects }: { projects: Project[] }) {
 
   return (
     <section
+      id="projects"
       ref={sectionRef}
       style={{
         padding: "clamp(80px, 12vw, 160px) clamp(24px, 6vw, 120px)",

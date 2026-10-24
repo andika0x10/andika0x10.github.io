@@ -28,9 +28,9 @@ export const links: Route.LinksFunction = () => [
 
 export const meta: Route.MetaFunction = () => {
   return [
-    { title: "Andika Dinata - Security Researcher & Software Engineer" },
-    { name: "description", content: "Andika Dinata - CS student at ITERA, Security Researcher and Software Engineer based in Bandar Lampung, Indonesia. Building software to understand systems, studying security to understand how systems fail." },
-    { name: "keywords", content: "Andika Dinata, Security Researcher, Software Engineer, Web Security, Cybersecurity, Developer, Portfolio, Indonesia, Bandar Lampung, ITERA" },
+    { title: "Andika Dinata — Vulnerability Researcher & Software Engineer" },
+    { name: "description", content: "Andika Dinata - CS student at ITERA, Vulnerability Researcher and Software Engineer based in Bandar Lampung, Indonesia. I research how systems fail and build software with that understanding." },
+    { name: "keywords", content: "Andika Dinata, Vulnerability Researcher, Software Engineer, Web Security, Cybersecurity, Developer, Portfolio, Indonesia, Bandar Lampung, ITERA" },
     { name: "author", content: "Andika Dinata" },
     { name: "robots", content: "index, follow" },
     { name: "googlebot", content: "index, follow" },
@@ -38,8 +38,8 @@ export const meta: Route.MetaFunction = () => {
     // Open Graph / Facebook
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://andika0x01.github.io/" },
-    { property: "og:title", content: "Andika Dinata - Security Researcher & Software Engineer" },
-    { property: "og:description", content: "CS student at ITERA, Security Researcher and Software Engineer. Building software to understand systems, studying security to understand how systems fail." },
+    { property: "og:title", content: "Andika Dinata — Vulnerability Researcher & Software Engineer" },
+    { property: "og:description", content: "CS student at ITERA, Vulnerability Researcher and Software Engineer. I research how systems fail and build software with that understanding." },
     { property: "og:image", content: "https://andika0x01.github.io/og-image.png" },
     { property: "og:site_name", content: "Andika Dinata" },
     { property: "og:locale", content: "en_US" },
@@ -47,8 +47,8 @@ export const meta: Route.MetaFunction = () => {
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:url", content: "https://andika0x01.github.io/" },
-    { name: "twitter:title", content: "Andika Dinata - Security Researcher & Software Engineer" },
-    { name: "twitter:description", content: "CS student at ITERA, Security Researcher and Software Engineer. Building software to understand systems, studying security to understand how systems fail." },
+    { name: "twitter:title", content: "Andika Dinata — Vulnerability Researcher & Software Engineer" },
+    { name: "twitter:description", content: "CS student at ITERA, Vulnerability Researcher and Software Engineer. I research how systems fail and build software with that understanding." },
     { name: "twitter:image", content: "https://andika0x01.github.io/og-image.png" },
     { name: "twitter:creator", content: "@andika0x01" },
     

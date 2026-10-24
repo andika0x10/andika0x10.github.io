@@ -22,10 +22,10 @@ clientLoader.hydrate = true as const;
 
 export function meta(): ReturnType<Route.MetaFunction> {
   return [
-    { title: "Andika Dinata" },
+    { title: "Andika Dinata — Vulnerability Researcher & Software Engineer" },
     {
       name: "description",
-      content: "Software engineer and CS student at Sumatera Institute of Technology. Interested in theoretical computer science and cybersecurity.",
+      content: "Andika Dinata — Vulnerability Researcher & Software Engineer based in Bandar Lampung, Indonesia. I research how systems fail and build software with that understanding.",
     },
   ];
 }
